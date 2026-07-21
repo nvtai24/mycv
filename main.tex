@@ -1,0 +1,216 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    \justifying
+    #1 \vspace{-2pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.2in]
+  \justifying
+}
+
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Nguyen Van Tai} \\ \vspace{1pt}
+  \small +84 37 351 7718 $|$
+  \href{mailto:nvtai24work@gmail.com}{\underline{nvtai24work@gmail.com}} $|$
+  \href{https://github.com/nvtai24}{\underline{github.com/nvtai24}} $|$
+  \href{https://nvtai24.site}{\underline{nvtai24.site}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\begin{justify}
+  Final-year Software Engineering student with a strong passion for backend development and software architecture. I enjoy learning new technologies, solving challenging problems, and continuously improving my technical skills while building reliable and maintainable software solutions.
+\end{justify}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {FPT University}{Oct 2022 -- Sep 2026 (Expect)}
+      {Bachelor of Software Engineering}{GPA: \textbf{3.5/4.0}}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {National Citizen Commercial Joint Stock Bank}{May 2025 -- Sep 2025}
+      {Backend Developer Intern}{}
+      \resumeItemListStart
+        \resumeItem{Analyzed banking business requirements and technical documentation to design and implement
+        backend solutions that met functional requirements while ensuring code quality and maintainability.}
+        \resumeItem{Developed and maintained secure RESTful APIs using Java Spring Boot, ensuring strict compliance
+        with the bank's data security and transaction integrity standards.}
+        \resumeItem{Collaborated effectively with cross-functional teams (including Business Analysts and QA) to
+        clarify requirements, write unit tests, and resolve technical bugs during the UAT (User Acceptance Testing)
+        phase.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {FPTU IA Lab}{Apr 2026 -- Present}
+      {Developer}{}
+      \resumeItemListStart
+        \resumeItem{Maintained a Kubernetes-based microservices CTF platform (FCTF), shipping 200+ fixes/improvements
+        to the contest–challenge lifecycle (dynamic deployment, cleanup jobs, stop-all with retry logic).}
+        \resumeItem{Redesigned core database schema and wrote production-safe Alembic migrations for MySQL with
+        zero downtime}
+        \resumeItem{Set up and managed cloud infrastructure on Google Cloud for development and testing, and built
+        automated CI/CD pipelines with GitHub Actions to streamline the build-and-deploy workflow.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\href{https://github.com/username/TravelTech}{\textbf{\underline{TravelTech}}} $|$
+      \emph{ASP.NET Core, PostgreSQL, Redis, OpenAI API, Docker}}
+      {Jan 2026 -- Feb 2026}
+      \resumeItemListStart
+        \resumeItem{Developed a full-stack backend RESTful API for an AI-powered travel planning platform using
+        ASP.NET Core (.NET 8) with PostgreSQL as the database}
+        \resumeItem{Implemented JWT Bearer authentication and Google OAuth for secure, role-based user access}
+        \resumeItem{Integrated OpenAI for AI-generated travel itineraries and SePay payment webhook for real-time
+        subscription payments, with a background worker for automated payment cleanup}
+        \resumeItem{Used Redis for caching/rate limiting and AWS S3/Cloudinary for file storage}
+        \resumeItem{Containerized the app with Docker and deployed to Railway / GCP with automatic database
+        migrations on startup}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\href{https://github.com/username/MyQuiz}{\textbf{\underline{MyQuiz}}} $|$
+      \emph{ASP.NET Core, PostgreSQL, Redis, MediatR, OpenAI API, Docker}}
+      {Dec 2025 -- Jan 2026}
+      \resumeItemListStart
+        \resumeItem{Designed and built the backend of an AI-powered quiz-generation platform with ASP.NET Core 8
+        using Clean Architecture (Domain/Application/Infrastructure) and CQRS via MediatR}
+        \resumeItem{Built an AI quiz-generation pipeline that extracts text from uploaded PDF/DOCX files and streams
+        AI-generated questions to the client in real time using the OpenAI API and Server-Sent Events}
+        \resumeItem{Implemented JWT + refresh-token authentication with ASP.NET Identity, Google OAuth2 login, and
+        role-based authorization for Admin/User access}
+        \resumeItem{Integrated PostgreSQL (EF Core) for persistence, Redis for rate limiting, AWS S3 for file
+        storage, and a subscription/payment module with SePay webhook integration and a background job to
+        auto-expire pending transactions}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Languages}{: Java, C\#, JavaScript/TypeScript, Dart, SQL} \\
+      \textbf{Frontend}{: HTML, CSS, Bootstrap, TailwindCSS, jQuery, React} \\
+      \textbf{Backend}{: Spring Boot, ASP.NET Core, RabbitMQ} \\
+      \textbf{Database}{: SQL Server, MySQL, PostgreSQL, Redis} \\
+      \textbf{DevOps}{: Git, Docker, CI/CD, Google Cloud} \\
+    }}
+  \end{itemize}
+
+%-------------------------------------------
+\end{document}
