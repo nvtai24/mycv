@@ -84,11 +84,13 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[3]{
+% Optional first argument: live demo URL, shown under the date
+\newcommand{\resumeProjectHeading}[4][]{
   \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small #1 & #3 \\
-      \small\textbf{Technologies}: \emph{#2} & \\
+      \small #2 & #4 \\
+      \small\textbf{Technologies}: \emph{#3} &
+      \ifx\relax#1\relax\else\small\href{#1}{\underline{Live Demo}}\fi \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -190,7 +192,7 @@
         Wrote a \textbf{Python migration tool} that moves data between CTFd and FCTF.}
       \resumeItemListEnd
 
-    \resumeProjectHeading
+    \resumeProjectHeading[https://dealmind.nvtai24.cloud/]
       {\href{https://github.com/nvtai24/dealmind}{\textbf{\underline{DealMind}}} -- AI sales training platform with role-play, fact-checking, and scoring}
       {FastAPI, Next.js, PostgreSQL (pgvector), OpenAI API, Docker, GCP}
       {Sep 2026 -- Oct 2026}
