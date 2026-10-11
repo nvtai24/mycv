@@ -84,10 +84,11 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
+\newcommand{\resumeProjectHeading}[3]{
   \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small\textbf{#1} & #2 \\
+      \small\textbf{#1} & #3 \\
+      \small\textbf{Technologies:} \emph{#2} & \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -168,23 +169,50 @@
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
-      {\href{https://github.com/nvtai24/traveltech-api}{\textbf{\underline{TravelTech}}} $|$
-      \emph{ASP.NET Core, PostgreSQL, Redis, OpenAI API, Docker}}
-      {Jan 2026 -- Feb 2026}
+      {\href{https://github.com/hoaanhtuc113/FCTF}{\textbf{\underline{FCTF}}} \textbf{-- Scalable CTF Competition Platform}}
+      {ASP.NET Core, Go, React, MariaDB, Redis, RabbitMQ, Kubernetes (K3s), Argo Workflows}
+      {Jun 2025 -- Present}
       \resumeItemListStart
-        \resumeItem{Developed a full-stack backend RESTful API for an AI-powered travel planning platform using
-        ASP.NET Core (.NET 8) with PostgreSQL as the database}
-        \resumeItem{Implemented JWT Bearer authentication and Google OAuth for secure, role-based user access}
-        \resumeItem{Integrated OpenAI for AI-generated travel itineraries and SePay payment webhook for real-time
-        subscription payments, with a background worker for automated payment cleanup}
-        \resumeItem{Used Redis for caching/rate limiting and AWS S3/Cloudinary for file storage}
-        \resumeItem{Containerized the app with Docker and deployed to Railway / GCP with automatic database
-        migrations on startup}
+        \resumeItem{Built a microservices CTF platform for large-scale competitions. It includes a React 19 +
+        TypeScript contestant portal, ASP.NET Core (.NET 8) backend services, and an admin control center based on
+        CTFd (Flask), all backed by MariaDB.}
+        \resumeItem{Created on-demand challenge deployment: each team gets its own challenge instance, started
+        through RabbitMQ and Argo Workflows. A Kubernetes watcher service tracks each instance's status, and
+        instances run sandboxed with gVisor and NetworkPolicy isolation.}
+        \resumeItem{Wrote a Challenge Gateway in Go that forwards HTTP and TCP traffic to challenge instances. It
+        checks each request's token and applies rate limits using Redis Lua scripts.}
+        \resumeItem{Secured the APIs with JWT authentication and token revocation, Redis-backed rate limiting, and
+        Cloudflare Turnstile. Fixed race conditions in flag submission, hint unlocking and challenge start/stop.}
+        \resumeItem{Deployed on a multi-node K3s cluster with Helm, autoscaling (HPA), NFS storage, cert-manager and
+        Harbor as the private image registry. Built CI/CD with GitHub Actions that builds images, pushes them to
+        Harbor and rolls them out with kubectl. Added monitoring with Prometheus, Grafana and Loki.}
+        \resumeItem{Validated performance and correctness with k6 load, stress, spike, soak and concurrency tests.
+        Wrote a Python tool that migrates data between CTFd and FCTF.}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\href{https://github.com/nvtai24/myquiz-be}{\textbf{\underline{MyQuiz}}} $|$
-      \emph{ASP.NET Core, PostgreSQL, Redis, MediatR, OpenAI API, Docker}}
+      {\href{https://github.com/nvtai24/dealmind}{\textbf{\underline{DealMind}}} \textbf{-- AI sales training platform with role-play, fact-checking, and scoring}}
+      {FastAPI, Next.js, PostgreSQL (pgvector), OpenAI API, Docker, GCP}
+      {Sep 2026 -- Oct 2026}
+      \resumeItemListStart
+        \resumeItem{Built an AI-powered sales training platform for real-estate agents (role-play calls with an AI
+        customer, fact-checking claims against project documents, evidence-based scoring) with FastAPI, Next.js
+        (App Router) and PostgreSQL + pgvector, as part of a 6-person team}
+        \resumeItem{Designed a code-first database schema with SQLAlchemy and Alembic migrations, and implemented
+        multi-tenant role-based access (platform admin, company admin, team lead, sales) with admin-provisioned
+        accounts and per-tenant data isolation}
+        \resumeItem{Developed REST APIs and dashboards for every role: user/team/project management, document
+        library, customer personas, versioned scoring rubrics and audit logs for admins; review queues, score
+        overrides and assignments for leads; training paths, certifications and session reports for trainees}
+        \resumeItem{Integrated MinIO (S3-compatible) object storage for project documents and recorded call audio}
+        \resumeItem{Deployed with Docker Compose to a GCP Compute Engine VM behind Caddy (automatic HTTPS), with a
+        GitHub Actions pipeline (lint, migration checks, 500+ tests) on a self-hosted runner and keyless deploys
+        via Workload Identity Federation; added pre-deploy database/storage backups and a web log viewer}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\href{https://github.com/nvtai24/myquiz-be}{\textbf{\underline{MyQuiz}}} \textbf{-- AI-powered quiz generation and flashcard-based learning platform}}
+      {ASP.NET Core, PostgreSQL, Redis, MediatR, OpenAI API, Docker}
       {Dec 2025 -- Jan 2026}
       \resumeItemListStart
         \resumeItem{Designed and built the backend of an AI-powered quiz-generation platform with ASP.NET Core 8
